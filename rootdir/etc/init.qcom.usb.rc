@@ -136,6 +136,9 @@ on property:sys.usb.config=*
 on boot && property:ro.boot.usbconfigfs=true
         setprop sys.usb.configfs 1
 
+on property:vendor.usb.mimode=*
+    setprop persist.vendor.usb.config ${vendor.usb.mimode}
+
 #
 # USB compositions
 #
