@@ -11,13 +11,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from chime device
 $(call inherit-product, device/xiaomi/chime/device.mk)
 
-# Inherit some common xdroidOSS stuff.
-$(call inherit-product, vendor/xdroid/config/common.mk)
-XDROID_MAINTAINER := frostg012
-XDROID_BOOT := 1080
+
+# Inherit some common aicp stuff.
+$(call inherit-product, vendor/aicp/config/common_full_phone.mk)
+
+# AICP Device Maintainers
+PRODUCT_BUILD_PROP_OVERRIDES += \
+DEVICE_MAINTAINERS="Darknius"
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := xdroid_chime
+PRODUCT_NAME := aicp_chime
 PRODUCT_DEVICE := chime
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := SM6115
